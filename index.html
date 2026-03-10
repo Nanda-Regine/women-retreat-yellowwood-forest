@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WomenForest Retreat · Issue No. 001 · 1–3 May 2026</title>
+<meta name="description" content="WomenForest — a 3-day women's retreat with Soul Dance at Yellowwood Forest, Morgan Bay. 1–3 May 2026. Silence, dance, nature and deep connection.">
+<meta property="og:title" content="WomenForest Retreat · Issue No. 001 · 1–3 May 2026">
+<meta property="og:description" content="Three days of silence, dance, nature and connection at Yellowwood Forest, Morgan Bay. Early bird from R2 150.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#faf6ee">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+
+/* ═══════════════════════════════════
+   DESIGN TOKENS
+   ═══════════════════════════════════ */
+:root {
+  --navy:        #0a1628;
+  --navy-2:      #122040;
+  --navy-3:      #1a2f55;
+  --navy-4:      #243a68;
+  --forest:      #163320;
+  --forest-2:    #1f4a2c;
+  --forest-3:    #2d6a3f;
+  --sage:        #5a9e6a;
+  --mint:        #8fd4a0;
+  --mint-pale:   #c2e8cc;
+  --gold-deep:   #8a5e1a;
+  --gold:        #c9922a;
+  --gold-2:      #dba83c;
+  --gold-3:      #f0c84e;
+  --gold-shine:  #fff5c8;
+  --cream:       #faf6ee;
+  --parch:       #f4edda;
+  --blush:       #f8f0e8;
+  --white:       #ffffff;
+  --ink:         #0d1520;
+  --ink-2:       #2a3550;
+  --ink-3:       #4a5870;
+}
+
+/* ═══ RESET & BASE ═══ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  overflow-x: hidden;
+  cursor: none;
+}
+@media (hover: none), (pointer: coarse) {
+  body { cursor: auto; }
+  .cursor, .cursor-ring { display: none; }
+}
+
+/* ═══ CUSTOM CURSOR ═══ */
+.cursor {
+  position: fixed; width: 10px; height: 10px;
+  background: var(--gold-3); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s;
+  box-shadow: 0 0 10px rgba(240,200,78,0.7);
+}
+.cursor-ring {
+  position: fixed; width: 32px; height: 32px;
+  border: 1px solid rgba(240,200,78,0.4); border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width .3s, height .3s;
+}
+
+/* ═══ GOLD SHIMMER ═══ */
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+.gold-text {
+  background: linear-gradient(105deg,
+    var(--gold-deep) 0%, var(--gold-2) 20%, var(--gold-shine) 40%,
+    var(--gold-3) 50%, var(--gold-shine) 60%, var(--gold-2) 80%, var(--gold-deep) 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
+
+/* ═══ MAGAZINE NAV / MASTHEAD ═══ */
+nav {
+  position: sticky; top: 0; z-index: 500;
+  background: rgba(250,246,238,0.97);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(10,22,40,0.08);
+  height: 64px; padding: 0 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-left {
+  display: flex; flex-direction: column; gap: 1px;
+}
+.nav-issue {
+  font-size: .58rem; font-weight: 800; letter-spacing: .35em; text-transform: uppercase;
+  color: var(--sage);
+}
+.nav-date {
+  font-size: .58rem; font-weight: 400; letter-spacing: .12em;
+  color: var(--ink-3); font-style: italic;
+}
+.nav-brand {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem; color: var(--navy);
+  text-decoration: none;
+  position: absolute; left: 50%; transform: translateX(-50%);
+  transition: opacity .2s;
+}
+.nav-brand:hover { opacity: .7; }
+.nav-right { display: flex; align-items: center; gap: 28px; }
+.nav-links { display: flex; gap: 22px; list-style: none; }
+.nav-links a {
+  font-size: .66rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase;
+  color: var(--ink-3); text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover { color: var(--navy); }
+.nav-pill {
+  background: var(--navy); color: var(--cream);
+  font-weight: 800; font-size: .66rem; letter-spacing: .12em; text-transform: uppercase;
+  padding: 9px 20px; border-radius: 50px; text-decoration: none;
+  transition: background .25s, transform .2s;
+  box-shadow: 0 4px 16px rgba(10,22,40,0.2);
+}
+.nav-pill:hover { background: var(--forest-2); transform: translateY(-1px); }
+
+/* ═══ URGENCY BAR ═══ */
+.urgency {
+  background: var(--navy);
+  padding: 11px 20px; text-align: center;
+  font-size: .76rem; font-weight: 600; letter-spacing: .08em;
+  color: rgba(255,255,255,0.7);
+}
+.urgency strong { color: var(--gold-3); font-weight: 800; }
+.u-dot {
+  display: inline-block; width: 6px; height: 6px;
+  background: var(--gold-3); border-radius: 50%;
+  margin: 0 10px; vertical-align: middle;
+  box-shadow: 0 0 6px var(--gold-3);
+  animation: pulse 1.5s ease infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.8); opacity: .4; }
+}
+
+/* ═══ COVER / HERO ═══ */
+.cover {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 52% 48%;
+  position: relative; overflow: hidden;
+  background: var(--cream);
+}
+
+/* Left editorial panel */
+.cover-left {
+  padding: 80px 6vw 80px 8vw;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative; z-index: 2;
+}
+.cover-eyebrow {
+  font-size: .62rem; font-weight: 800; letter-spacing: .35em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 36px;
+  display: flex; align-items: center; gap: 12px;
+}
+.cover-eyebrow::before {
+  content: ''; display: inline-block; width: 36px; height: 1px; background: var(--sage);
+}
+.cover-title {
+  font-family: 'Cormorant Infant', serif;
+  font-size: clamp(3.8rem, 7.5vw, 7.5rem);
+  line-height: .9; font-weight: 300; letter-spacing: -.02em;
+  color: var(--navy); margin-bottom: 0;
+}
+.cover-title .script {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3.4rem, 7vw, 7rem);
+  display: block; line-height: 1.1;
+  background: linear-gradient(105deg, var(--gold-deep) 0%, var(--gold-2) 20%, var(--gold-shine) 40%, var(--gold-3) 50%, var(--gold-shine) 60%, var(--gold-2) 80%, var(--gold-deep) 100%);
+  background-size: 300% auto; animation: shimmer 5s linear infinite;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  filter: drop-shadow(0 2px 14px rgba(201,146,42,0.22));
+}
+.cover-title .italic { font-style: italic; color: var(--forest-3); font-weight: 300; }
+.cover-rule {
+  width: 64px; height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 30px 0;
+}
+.cover-lead {
+  font-family: 'Cormorant Infant', serif;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-style: italic; font-weight: 300; color: var(--ink-2);
+  line-height: 1.72; max-width: 440px; margin-bottom: 32px;
+}
+.cover-meta { display: flex; flex-direction: column; gap: 9px; margin-bottom: 38px; }
+.meta-line {
+  display: flex; align-items: center; gap: 10px;
+  font-size: .8rem; font-weight: 600; letter-spacing: .06em; color: var(--ink-2);
+}
+.meta-dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+.cover-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* Right visual panel */
+.cover-right {
+  position: relative;
+  background:
+    radial-gradient(ellipse 80% 70% at 60% 35%, rgba(22,51,32,0.8) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 20% 75%, rgba(10,22,40,0.9) 0%, transparent 70%),
+    linear-gradient(160deg, var(--navy-3) 0%, var(--forest) 45%, var(--navy) 100%);
+  clip-path: polygon(7% 0%, 100% 0%, 100% 100%, 0% 100%);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.cover-right::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(143,212,160,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143,212,160,0.04) 1px, transparent 1px);
+  background-size: 50px 50px; pointer-events: none;
+}
+.cover-right::before {
+  content: '';
+  position: absolute;
+  width: 1px; height: 130%; left: 38%; top: -15%;
+  background: linear-gradient(to bottom, transparent, rgba(240,200,78,0.18), rgba(240,200,78,0.06), transparent);
+  transform: rotate(12deg); pointer-events: none;
+}
+
+/* Blobs */
+.c-blob {
+  position: absolute; pointer-events: none;
+  border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+}
+.cb1 {
+  width: 420px; height: 420px; top: -100px; right: -80px;
+  background: radial-gradient(ellipse, rgba(45,106,63,0.4) 0%, transparent 65%);
+  animation: morph 18s ease-in-out infinite; filter: blur(1px);
+}
+.cb2 {
+  width: 300px; height: 300px; bottom: -60px; left: 8%;
+  background: radial-gradient(ellipse, rgba(201,146,42,0.12) 0%, transparent 65%);
+  animation: morph 24s ease-in-out infinite reverse; filter: blur(2px);
+}
+@keyframes morph {
+  0%, 100% { border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; transform: rotate(0deg); }
+  33%       { border-radius: 40% 60% 45% 55% / 60% 40% 55% 45%; transform: rotate(7deg); }
+  66%       { border-radius: 55% 45% 60% 40% / 45% 55% 50% 50%; transform: rotate(-4deg); }
+}
+
+/* Petals */
+.petal {
+  position: absolute; pointer-events: none; font-size: 1rem; z-index: 3;
+  animation: fall linear infinite; opacity: 0;
+}
+@keyframes fall {
+  0%   { transform: translateY(-40px) rotate(0deg); opacity: 0; }
+  8%   { opacity: .55; }
+  88%  { opacity: .2; }
+  100% { transform: translateY(105vh) rotate(460deg) translateX(18px); opacity: 0; }
+}
+
+/* Floating price ring */
+.cover-float { position: relative; z-index: 2; text-align: center; padding: 32px; }
+.price-ring {
+  width: 220px; height: 220px; margin: 0 auto 22px;
+  position: relative; display: flex; align-items: center; justify-content: center;
+}
+.ring-outer {
+  position: absolute; inset: 0;
+  border: 1px solid rgba(240,200,78,0.25);
+  border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
+  animation: spin 28s linear infinite;
+}
+.ring-inner {
+  position: absolute; inset: 24px;
+  border: 1px solid rgba(143,212,160,0.18);
+  border-radius: 40% 60% 45% 55% / 55% 45% 55% 45%;
+  animation: spin 20s linear infinite reverse;
+}
+@keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+.price-center {
+  width: 136px; height: 136px;
+  background: rgba(10,22,40,0.72); border: 1px solid rgba(240,200,78,0.3);
+  border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  backdrop-filter: blur(12px); box-shadow: 0 0 40px rgba(240,200,78,0.1);
+}
+.price-amt {
+  font-family: 'Cormorant Infant', serif; font-size: 2.3rem; line-height: 1;
+  background: linear-gradient(105deg, var(--gold-2), var(--gold-3), var(--gold-shine), var(--gold-2));
+  background-size: 300% auto; animation: shimmer 4s linear infinite;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.price-lbl {
+  font-size: .58rem; color: rgba(255,255,255,0.38);
+  letter-spacing: .14em; text-transform: uppercase; margin-top: 2px;
+}
+.cover-sub-quote {
+  font-family: 'Cormorant Infant', serif;
+  font-size: 1rem; font-style: italic;
+  color: rgba(255,255,255,0.58); line-height: 1.7;
+  max-width: 280px; margin: 0 auto;
+}
+
+/* ═══ BUTTONS ═══ */
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, var(--gold-deep), var(--gold), var(--gold-3), var(--gold-2), var(--gold-deep));
+  background-size: 300% auto; animation: shimmer 4s linear infinite;
+  color: var(--navy); font-weight: 800; font-size: .84rem; letter-spacing: .07em;
+  padding: 15px 34px;
+  border-radius: 60px 10px 60px 10px;
+  text-decoration: none; border: none; cursor: pointer;
+  box-shadow: 0 8px 28px rgba(201,146,42,0.4);
+  transition: transform .25s, box-shadow .25s;
+  position: relative; overflow: hidden;
+}
+.btn-gold::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+  animation: sheen 3s ease-in-out infinite 1.2s;
+}
+@keyframes sheen { 0% { left: -100%; } 100% { left: 200%; } }
+.btn-gold:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(201,146,42,0.6); }
+
+.btn-navy {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--navy); color: var(--cream);
+  font-weight: 800; font-size: .84rem; letter-spacing: .07em;
+  padding: 15px 34px;
+  border-radius: 10px 60px 10px 60px;
+  text-decoration: none; border: none; cursor: pointer;
+  box-shadow: 0 8px 28px rgba(10,22,40,0.25);
+  transition: transform .25s, box-shadow .25s, background .25s;
+}
+.btn-navy:hover { transform: translateY(-3px); background: var(--forest-2); box-shadow: 0 14px 40px rgba(10,22,40,0.35); }
+
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; border: 1.5px solid rgba(10,22,40,0.18);
+  color: var(--ink-2); font-weight: 700; font-size: .84rem; letter-spacing: .06em;
+  padding: 14px 28px; border-radius: 10px 60px 10px 60px;
+  text-decoration: none; cursor: pointer; transition: all .25s;
+}
+.btn-ghost:hover { border-color: var(--navy); color: var(--navy); background: rgba(10,22,40,0.04); }
+
+/* ═══ SECTION BASE ═══ */
+section { padding: 100px 6vw; position: relative; }
+.container { max-width: 1120px; margin: 0 auto; }
+
+/* Chapter label */
+.chap {
+  font-size: .6rem; font-weight: 800; letter-spacing: .38em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 14px;
+  display: flex; align-items: center; gap: 10px;
+}
+.chap::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--sage); }
+.chap-n { color: var(--ink-3); opacity: .5; font-style: italic; letter-spacing: .1em; }
+
+.section-title {
+  font-family: 'Cormorant Infant', serif;
+  font-size: clamp(2.4rem, 4.8vw, 4rem);
+  line-height: 1.05; color: var(--navy);
+  font-weight: 300; letter-spacing: -.015em; margin-bottom: 18px;
+}
+.section-title em { color: var(--forest-3); font-weight: 400; }
+.section-title .script {
+  font-family: 'Great Vibes', cursive; font-size: 1.2em;
+  background: linear-gradient(105deg, var(--gold-deep), var(--gold-2), var(--gold-shine), var(--gold-2), var(--gold-deep));
+  background-size: 300% auto; animation: shimmer 4s linear infinite;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.section-body { font-size: 1rem; line-height: 1.88; color: var(--ink-2); max-width: 560px; }
+
+/* Thin horizontal rule */
+.thin-rule {
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(10,22,40,0.1), transparent);
+}
+
+/* ═══ PULL QUOTE ═══ */
+.pull-quote {
+  padding: 88px 8vw; text-align: center;
+  background: var(--cream); position: relative;
+}
+.pull-quote::before, .pull-quote::after {
+  content: ''; position: absolute; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,146,42,0.28), transparent);
+}
+.pull-quote::before { top: 0; }
+.pull-quote::after  { bottom: 0; }
+.pq-mark {
+  font-family: 'Cormorant Infant', serif;
+  font-size: 5.5rem; line-height: .5; color: var(--gold-3); opacity: .3;
+  display: block; margin-bottom: 14px;
+}
+.pq-text {
+  font-family: 'Cormorant Infant', serif;
+  font-size: clamp(1.7rem, 3.8vw, 3rem);
+  font-weight: 300; font-style: italic; color: var(--navy);
+  line-height: 1.42; max-width: 880px; margin: 0 auto;
+}
+.pq-text em {
+  background: linear-gradient(105deg, var(--gold-deep), var(--gold-2), var(--gold-3), var(--gold-2));
+  background-size: 300% auto; animation: shimmer 5s linear infinite;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ═══ ABOUT / WHY ═══ */
+.about-section { background: var(--cream); }
+.about-grid {
+  display: grid; grid-template-columns: 1.1fr .9fr; gap: 70px; align-items: start;
+}
+.about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 34px; }
+.about-card {
+  background: var(--white);
+  border-radius: 28px 6px 28px 6px;
+  padding: 24px 20px;
+  border: 1px solid rgba(10,22,40,0.06);
+  box-shadow: 0 4px 20px rgba(10,22,40,0.05);
+  transition: transform .3s, box-shadow .3s;
+  position: relative; overflow: hidden;
+}
+.about-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-3), var(--gold));
+  opacity: 0; transition: opacity .3s;
+}
+.about-card:nth-child(even) { border-radius: 6px 28px 6px 28px; }
+.about-card:nth-child(even)::before { background: linear-gradient(90deg, var(--forest-3), var(--sage), var(--forest-3)); }
+.about-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(10,22,40,0.1); }
+.about-card:hover::before { opacity: 1; }
+.ac-icon { font-size: 1.6rem; margin-bottom: 10px; display: block; }
+.about-card h3 {
+  font-family: 'Cormorant Infant', serif; font-size: 1.08rem; font-weight: 700;
+  color: var(--navy); margin-bottom: 5px;
+}
+.about-card p { font-size: .86rem; line-height: 1.65; color: var(--ink-2); }
+
+/* About feature box — right side */
+.about-feature {
+  background:
+    radial-gradient(ellipse 80% 55% at 15% 15%, rgba(36,58,104,0.88) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 75% at 85% 85%, rgba(22,51,32,0.65) 0%, transparent 55%),
+    var(--navy);
+  border-radius: 40px 6px 40px 6px;
+  padding: 48px 40px;
+  border: 1px solid rgba(240,200,78,0.1);
+  box-shadow: 0 28px 80px rgba(0,0,0,0.3);
+  position: sticky; top: 84px;
+  overflow: hidden;
+}
+.about-feature::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(240,200,78,0.35), transparent);
+}
+.about-feature blockquote {
+  font-family: 'Cormorant Infant', serif;
+  font-size: 1.3rem; font-style: italic; color: rgba(255,255,255,0.86);
+  line-height: 1.65; margin-bottom: 24px; padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  position: relative; z-index: 1;
+}
+.about-feature blockquote em {
+  background: linear-gradient(105deg, var(--gold-2), var(--gold-3), var(--gold-shine), var(--gold-2));
+  background-size: 300% auto; animation: shimmer 4s linear infinite;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.feat-list { display: flex; flex-direction: column; gap: 10px; position: relative; z-index: 1; }
+.feat-item { display: flex; align-items: center; gap: 10px; font-size: .87rem; color: rgba(255,255,255,0.62); }
+.feat-dot { width: 4px; height: 4px; background: var(--mint); border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 5px var(--mint); }
+
+/* ═══ PROGRAMME ═══ */
+.programme {
+  background:
+    radial-gradient(ellipse 100% 75% at 15% 15%, rgba(36,58,104,0.7) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 60% at 85% 85%, rgba(22,51,32,0.6) 0%, transparent 50%),
+    var(--navy);
+  clip-path: polygon(0 3.5%, 100% 0%, 100% 96.5%, 0% 100%);
+  padding: 130px 6vw;
+}
+.programme .chap { color: var(--mint); }
+.programme .chap::before { background: var(--mint); }
+.programme .section-title { color: #fff; }
+.programme .section-title em { color: var(--gold-3); font-style: italic; }
+
+/* Day tabs */
+.day-tabs { display: flex; gap: 8px; margin: 36px 0 22px; flex-wrap: wrap; }
+.day-tab {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 50px; padding: 10px 22px;
+  font-family: 'Nunito', sans-serif; font-weight: 700; font-size: .74rem;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: rgba(255,255,255,0.38); cursor: pointer; transition: all .3s;
+  backdrop-filter: blur(8px);
+}
+.day-tab.active {
+  background: rgba(240,200,78,0.1); border-color: rgba(240,200,78,0.32); color: var(--gold-3);
+}
+.day-tab:hover:not(.active) { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.68); }
+
+.day-panel { display: none; animation: fadeUp .45s ease both; }
+.day-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+.day-header { grid-column: 1 / -1; margin-bottom: 8px; }
+.day-theme {
+  font-family: 'Great Vibes', cursive; font-size: 2.8rem; line-height: 1.05;
+  background: linear-gradient(105deg, var(--gold-2), var(--gold-3), var(--gold-shine), var(--gold-2));
+  background-size: 300% auto; animation: shimmer 4s linear infinite;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 4px;
+}
+.day-desc { font-size: .9rem; color: rgba(255,255,255,0.42); font-style: italic; }
+
+.sched {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 12px 16px;
+  display: flex; gap: 12px; align-items: center;
+  transition: background .2s;
+}
+.sched:hover { background: rgba(255,255,255,0.08); }
+.sched-time {
+  font-weight: 800; font-size: .73rem; letter-spacing: .05em; min-width: 44px;
+  background: linear-gradient(105deg, var(--gold), var(--gold-3));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.sched-line { width: 1px; height: 22px; background: rgba(143,212,160,0.2); flex-shrink: 0; }
+.sched-name { font-family: 'Cormorant Infant', serif; font-size: .93rem; color: rgba(255,255,255,0.82); }
+
+/* ═══ FEEL ═══ */
+.feel {
+  background:
+    radial-gradient(ellipse 70% 60% at 30% 40%, rgba(31,74,44,0.4) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 70% at 70% 60%, rgba(10,22,40,0.6) 0%, transparent 55%),
+    var(--forest);
+  padding: 100px 6vw; text-align: center;
+  clip-path: polygon(0 0, 100% 3%, 100% 100%, 0 97%);
+}
+.feel-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.5rem, 5.5vw, 4.8rem); line-height: 1.1; margin-bottom: 18px;
+  background: linear-gradient(105deg, var(--gold-2), var(--gold-3), var(--gold-shine), var(--gold-3), var(--gold-2));
+  background-size: 300% auto; animation: shimmer 5s linear infinite;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  filter: drop-shadow(0 3px 16px rgba(240,200,78,0.3));
+}
+.feel-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 26px 0; }
+.feel-chip {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(143,212,160,0.2);
+  border-radius: 50px; padding: 9px 18px;
+  font-size: .85rem; color: rgba(255,255,255,0.78);
+  display: flex; align-items: center; gap: 7px;
+  backdrop-filter: blur(6px); transition: all .22s; cursor: default;
+}
+.feel-chip:hover {
+  background: rgba(143,212,160,0.12); border-color: rgba(143,212,160,0.45);
+  transform: translateY(-2px);
+}
+
+/* ═══ INCLUDED / ESSENCE ═══ */
+.included { background: var(--parch); }
+.included-inner {
+  max-width: 1120px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: start;
+}
+.eq-list { display: grid; gap: 13px; margin-top: 28px; }
+.eq {
+  padding: 18px 22px;
+  background: var(--white);
+  border-radius: 6px 28px 6px 28px;
+  border: 1px solid rgba(10,22,40,0.06);
+  font-family: 'Cormorant Infant', serif; font-size: 1.04rem; font-style: italic;
+  color: var(--navy); line-height: 1.5;
+  box-shadow: 0 4px 16px rgba(10,22,40,0.04);
+  transition: transform .25s; position: relative; overflow: hidden;
+}
+.eq::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-3), var(--gold));
+}
+.eq:nth-child(even) { border-radius: 28px 6px 28px 6px; }
+.eq:nth-child(even)::before { background: linear-gradient(90deg, var(--forest-3), var(--sage), var(--forest-3)); }
+.eq:hover { transform: translateX(5px); }
+
+.included-box {
+  background:
+    radial-gradient(ellipse 80% 55% at 15% 15%, rgba(36,58,104,0.88) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 75% at 85% 85%, rgba(22,51,32,0.65) 0%, transparent 55%),
+    var(--navy);
+  border-radius: 40px 6px 40px 6px;
+  padding: 44px 38px;
+  position: sticky; top: 84px;
+  border: 1px solid rgba(143,212,160,0.1);
+  box-shadow: 0 24px 70px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+.included-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(143,212,160,0.35), transparent);
+}
+.included-box h3 {
+  font-family: 'Great Vibes', cursive; font-size: 2.4rem; margin-bottom: 20px; line-height: 1.1;
+  background: linear-gradient(105deg, var(--gold-2), var(--gold-3), var(--gold-shine), var(--gold-2));
+  background-size: 300% auto; animation: shimmer 4s linear infinite;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  position: relative; z-index: 1;
+}
+.inc-list { display: flex; flex-direction: column; gap: 13px; position: relative; z-index: 1; }
+.inc-item { display: flex; gap: 12px; align-items: flex-start; }
+.inc-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+.inc-item p { font-size: .9rem; line-height: 1.6; color: rgba(255,255,255,0.72); }
+.inc-item strong {
+  font-weight: 700;
+  background: linear-gradient(105deg, var(--gold-2), var(--gold-3));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ═══ VENUE ═══ */
+.venue { background: var(--cream); }
+.venue-inner {
+  max-width: 1120px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.25fr 1fr; gap: 58px; align-items: start;
+}
+.vd-list { margin-top: 30px; display: flex; flex-direction: column; }
+.vd {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 18px 0; border-bottom: 1px solid rgba(10,22,40,0.06);
+}
+.vd:last-child { border-bottom: none; }
+.vd-icon {
+  width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--forest-2), var(--forest-3));
+  display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+  box-shadow: 0 4px 14px rgba(22,51,32,0.28);
+}
+.vd-body strong {
+  display: block; font-size: .64rem; font-weight: 800; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--sage); margin-bottom: 3px;
+}
+.vd-body span { font-size: .9rem; color: var(--ink-2); line-height: 1.5; }
+
+.accom-box {
+  background:
+    radial-gradient(ellipse 80% 55% at 15% 15%, rgba(36,58,104,0.88) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 75% at 85% 85%, rgba(22,51,32,0.65) 0%, transparent 55%),
+    var(--navy);
+  border-radius: 30px 6px 30px 6px;
+  padding: 36px 30px;
+  position: sticky; top: 84px;
+  border: 1px solid rgba(240,200,78,0.1);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+.accom-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(240,200,78,0.32), transparent);
+}
+.accom-box h3 {
+  font-family: 'Cormorant Infant', serif; font-size: 1.65rem; font-weight: 700; margin-bottom: 4px;
+  background: linear-gradient(105deg, var(--gold-2), var(--gold-3), var(--gold-shine), var(--gold-2));
+  background-size: 300% auto; animation: shimmer 4s linear infinite;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  position: relative; z-index: 1;
+}
+.accom-sub { font-size: .8rem; color: rgba(255,255,255,0.36); font-style: italic; margin-bottom: 20px; position: relative; z-index: 1; }
+.accom-opt {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(143,212,160,0.1);
+  border-radius: 10px; padding: 12px 14px; margin-bottom: 8px;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: background .2s, transform .2s; position: relative; z-index: 1;
+}
+.accom-opt:hover { background: rgba(255,255,255,0.09); transform: translateX(3px); }
+.accom-opt-name { font-family: 'Cormorant Infant', serif; font-size: .93rem; color: rgba(255,255,255,0.82); }
+.accom-opt-price {
+  font-weight: 800; font-size: .82rem;
+  background: linear-gradient(105deg, var(--gold), var(--gold-3));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.accom-note {
+  background: rgba(240,200,78,0.07); border: 1px solid rgba(240,200,78,0.14);
+  border-radius: 8px; padding: 11px 13px; margin-top: 12px;
+  font-size: .8rem; color: rgba(255,255,255,0.47); font-style: italic; line-height: 1.5;
+  position: relative; z-index: 1;
+}
+
+/* ═══ PRICING ═══ */
+.pricing { background: var(--blush); text-align: center; overflow: hidden; position: relative; }
+.pricing::before {
+  content: ''; position: absolute; top: -180px; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(201,146,42,0.06) 0%, transparent 55%);
+  pointer-events: none;
+}
+.pricing .chap { justify-content: center; }
+.pricing .chap::before { display: none; }
+
+.pc-wrap { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin: 42px 0 24px; }
+.pc {
+  border-radius: 28px 6px 28px 6px;
+  padding: 34px 26px; flex: 0 0 252px;
+  position: relative; overflow: hidden;
+  background: var(--white);
+  border: 1px solid rgba(10,22,40,0.07);
+  box-shadow: 0 8px 28px rgba(10,22,40,0.07);
+  transition: transform .3s, box-shadow .3s;
+}
+.pc::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--sage), var(--mint), var(--sage));
+}
+.pc:hover { transform: translateY(-7px); box-shadow: 0 20px 50px rgba(10,22,40,0.12); }
+.pc.featured {
+  flex: 0 0 278px;
+  background:
+    radial-gradient(ellipse 80% 55% at 15% 15%, rgba(36,58,104,0.92) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 75% at 85% 85%, rgba(22,51,32,0.65) 0%, transparent 55%),
+    var(--navy);
+  border: 1px solid rgba(240,200,78,0.18);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.38), 0 0 30px rgba(201,146,42,0.1);
+  transform: scale(1.04);
+}
+.pc.featured::after {
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold-3), var(--gold-shine), var(--gold-3), var(--gold-deep));
+  animation: shimmer 3s linear infinite;
+}
+.pc.featured:hover { transform: scale(1.04) translateY(-7px); }
+.pc.crossed { opacity: .6; }
+.pc-badge {
+  position: absolute; top: 0; right: 18px;
+  background: linear-gradient(135deg, var(--gold-deep), var(--gold), var(--gold-3));
+  background-size: 300% auto; animation: shimmer 3s linear infinite;
+  color: var(--navy); font-weight: 800; font-size: .58rem;
+  letter-spacing: .12em; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 0 0 10px 10px;
+  box-shadow: 0 4px 12px rgba(201,146,42,0.35);
+}
+.pc-label { font-size: .64rem; font-weight: 800; letter-spacing: .22em; text-transform: uppercase; color: var(--sage); margin-bottom: 12px; }
+.pc.featured .pc-label { color: var(--mint); }
+.pc-price { font-family: 'Cormorant Infant', serif; font-size: 3rem; line-height: 1; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
+.pc-price span { font-size: 1.3rem; vertical-align: top; margin-top: 6px; display: inline-block; }
+.pc.featured .pc-price {
+  background: linear-gradient(105deg, var(--gold-2), var(--gold-3), var(--gold-shine), var(--gold-2));
+  background-size: 300% auto; animation: shimmer 4s linear infinite;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.pc.crossed .pc-price { text-decoration: line-through; opacity: .35; font-size: 1.85rem; }
+.pc-dl { font-size: .8rem; color: var(--ink-3); font-style: italic; margin-bottom: 18px; }
+.pc.featured .pc-dl { color: rgba(255,255,255,0.42); }
+.pc-list { list-style: none; text-align: left; padding-top: 14px; border-top: 1px solid rgba(10,22,40,0.07); }
+.pc.featured .pc-list { border-top: 1px solid rgba(255,255,255,0.07); }
+.pc-list li { font-size: .85rem; color: var(--ink-2); padding: 5px 0; display: flex; align-items: center; gap: 7px; }
+.pc.featured .pc-list li { color: rgba(255,255,255,0.66); }
+.pc-list li::before {
+  content: '✦'; font-size: .54rem; flex-shrink: 0;
+  background: linear-gradient(105deg, var(--gold), var(--gold-3));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.crossed-overlay {
+  position: absolute; inset: 0; border-radius: inherit;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none; background: rgba(250,246,238,0.52);
+}
+.crossed-stamp {
+  border: 2px solid rgba(180,60,60,0.3); color: rgba(180,60,60,0.5);
+  border-radius: 6px; padding: 4px 12px; font-weight: 800; font-size: .75rem;
+  letter-spacing: .15em; text-transform: uppercase; transform: rotate(-12deg);
+}
+
+/* ═══ NEWSLETTER ═══ */
+.newsletter { background: var(--parch); padding: 88px 6vw; }
+.nl-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+.nl-box {
+  background:
+    radial-gradient(ellipse 80% 55% at 15% 15%, rgba(36,58,104,0.88) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 75% at 85% 85%, rgba(22,51,32,0.65) 0%, transparent 55%),
+    var(--navy);
+  border-radius: 38px 6px 38px 6px;
+  padding: 52px 44px;
+  border: 1px solid rgba(240,200,78,0.1);
+  box-shadow: 0 30px 90px rgba(0,0,0,0.4);
+  position: relative; overflow: hidden;
+}
+.nl-box::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(240,200,78,0.35), transparent);
+}
+.nl-box > * { position: relative; z-index: 1; }
+.nl-box .chap { color: var(--mint); justify-content: center; }
+.nl-box .chap::before { display: none; }
+.nl-box .section-title { color: rgba(255,255,255,.92); font-size: 1.9rem; }
+.nl-body { font-size: .96rem; color: rgba(255,255,255,0.5); line-height: 1.8; margin-bottom: 26px; font-style: italic; }
+.nl-form { display: flex; gap: 8px; max-width: 400px; margin: 0 auto; }
+.nl-input {
+  flex: 1;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(143,212,160,0.22);
+  border-radius: 50px; padding: 12px 18px;
+  color: rgba(255,255,255,0.9);
+  font-family: 'Nunito', sans-serif; font-size: .91rem;
+  outline: none; transition: border-color .2s; backdrop-filter: blur(8px);
+}
+.nl-input::placeholder { color: rgba(255,255,255,0.26); }
+.nl-input:focus { border-color: rgba(143,212,160,0.5); }
+.nl-btn {
+  background: linear-gradient(135deg, var(--gold-deep), var(--gold), var(--gold-3), var(--gold));
+  background-size: 300% auto; animation: shimmer 4s linear infinite;
+  color: var(--navy); border: none; border-radius: 50px;
+  padding: 12px 20px; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .78rem;
+  letter-spacing: .06em; text-transform: uppercase; cursor: pointer; white-space: nowrap;
+  box-shadow: 0 6px 22px rgba(201,146,42,0.4); transition: transform .2s;
+}
+.nl-btn:hover { transform: translateY(-2px); }
+.nl-privacy { font-size: .72rem; color: rgba(255,255,255,0.26); margin-top: 11px; font-style: italic; }
+#nl-success { display: none; margin-top: 12px; color: var(--mint); font-family: 'Cormorant Infant', serif; font-style: italic; font-size: 1rem; }
+
+/* ═══ CONTACT ═══ */
+.contact { background: var(--cream); }
+.cc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 36px; }
+.cc {
+  background: var(--white);
+  border-radius: 6px 26px 6px 26px; padding: 28px 22px;
+  text-decoration: none; display: block; color: inherit;
+  border: 1px solid rgba(10,22,40,0.06);
+  box-shadow: 0 4px 20px rgba(10,22,40,0.05);
+  transition: transform .3s, box-shadow .3s;
+  position: relative; overflow: hidden;
+}
+.cc::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0; transition: opacity .3s;
+}
+.cc:hover { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(10,22,40,0.1); }
+.cc:hover::before { opacity: 1; }
+.cc-icon { font-size: 1.8rem; margin-bottom: 11px; display: block; }
+.cc h3 { font-family: 'Cormorant Infant', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+.cc p { font-size: .85rem; color: var(--ink-2); line-height: 1.6; margin-bottom: 12px; }
+.cc-link {
+  font-weight: 800; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+  background: linear-gradient(105deg, var(--forest-3), var(--sage));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* Final CTA */
+.final-cta {
+  text-align: center; margin-top: 50px; padding: 58px;
+  background:
+    radial-gradient(ellipse 80% 55% at 15% 15%, rgba(36,58,104,0.9) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 75% at 85% 85%, rgba(22,51,32,0.65) 0%, transparent 55%),
+    var(--navy);
+  border-radius: 38px 6px 38px 6px;
+  position: relative; overflow: hidden;
+  box-shadow: 0 28px 80px rgba(0,0,0,0.35);
+}
+.final-cta::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(240,200,78,0.4), rgba(143,212,160,0.22), rgba(240,200,78,0.4), transparent);
+}
+.final-cta > * { position: relative; z-index: 1; }
+.final-cta h2 {
+  font-family: 'Great Vibes', cursive; font-size: clamp(2.4rem, 4vw, 3.4rem);
+  line-height: 1.1; margin-bottom: 10px;
+  background: linear-gradient(105deg, var(--gold-2), var(--gold-3), var(--gold-shine), var(--gold-2));
+  background-size: 300% auto; animation: shimmer 4s linear infinite;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.final-cta p { color: rgba(255,255,255,0.48); font-style: italic; margin-bottom: 26px; font-size: 1rem; }
+
+/* ═══ FOOTER ═══ */
+footer {
+  background:
+    radial-gradient(ellipse 100% 80% at 50% 100%, rgba(36,58,104,0.25) 0%, transparent 60%),
+    var(--navy);
+  color: rgba(255,255,255,0.28);
+  text-align: center; padding: 36px 20px;
+  font-size: .8rem; line-height: 1.95;
+  border-top: 1px solid rgba(240,200,78,0.07);
+}
+footer strong { color: rgba(255,255,255,0.58); font-family: 'Cormorant Infant', serif; font-weight: 700; }
+
+/* ═══ REVEAL ANIMATIONS ═══ */
+.reveal    { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
+.reveal.up { opacity: 1; transform: translateY(0); }
+.reveal-l    { opacity: 0; transform: translateX(-24px); transition: opacity .75s ease, transform .75s ease; }
+.reveal-l.up { opacity: 1; transform: translateX(0); }
+.reveal-r    { opacity: 0; transform: translateX(24px); transition: opacity .75s ease, transform .75s ease; }
+.reveal-r.up { opacity: 1; transform: translateX(0); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 920px) {
+  .cover { grid-template-columns: 1fr; min-height: auto; }
+  .cover-right { clip-path: none; min-height: 380px; }
+  .about-grid, .included-inner, .venue-inner { grid-template-columns: 1fr; }
+  .about-cards { grid-template-columns: 1fr 1fr; }
+  .day-panel.active { grid-template-columns: 1fr; }
+  .cc-grid { grid-template-columns: 1fr 1fr; }
+  .pc-wrap { flex-direction: column; align-items: center; }
+  .pc, .pc.featured { flex: 0 0 auto; width: 100%; max-width: 315px; transform: none; }
+  .pc.featured:hover, .pc:hover { transform: translateY(-7px); }
+  .nl-form { flex-direction: column; }
+  .nav-links { display: none; }
+  .programme { clip-path: none; padding: 80px 5vw; }
+  .feel { clip-path: none; }
+  .nav-brand { position: static; transform: none; }
+  .nav-right { gap: 14px; }
+}
+@media (max-width: 600px) {
+  .cover-left { padding: 72px 5vw 60px; }
+  section { padding: 72px 5vw; }
+  .nl-box, .final-cta { padding: 36px 22px; }
+  .about-cards { grid-template-columns: 1fr; }
+  .cc-grid { grid-template-columns: 1fr; }
+  .pull-quote { padding: 60px 5vw; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- MASTHEAD NAV -->
+<nav>
+  <div class="nav-left">
+    <span class="nav-issue">Issue No. 001</span>
+    <span class="nav-date">1–3 May 2026</span>
+  </div>
+  <a href="#" class="nav-brand">WomenForest</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#programme">Programme</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+    </ul>
+    <a href="https://quicket.co.za" target="_blank" class="nav-pill">Book Now</a>
+  </div>
+</nav>
+
+<!-- URGENCY -->
+<div class="urgency">
+  <span class="u-dot"></span>
+  Early Bird Extended &nbsp;&middot;&nbsp; <strong>R2 150</strong> until <strong>15 March 2026</strong> &nbsp;&middot;&nbsp; <span id="countdown">&hellip;</span>
+</div>
+
+<!-- COVER -->
+<div class="cover" id="top">
+  <div class="cover-left">
+    <div class="cover-eyebrow">Soul Dance &middot; Women&rsquo;s Retreat Camp &middot; Eastern Cape</div>
+    <h1 class="cover-title">
+      <span class="script">Women</span>
+      <span class="italic">Forest</span>
+    </h1>
+    <div class="cover-rule"></div>
+    <p class="cover-lead">Three days of silence, soul dance, forest, fire &amp; deep connection. Get away. Breathe. Relax. Rediscover yourself.</p>
+    <div class="cover-meta">
+      <div class="meta-line"><span class="meta-dot"></span>1&ndash;3 May 2026</div>
+      <div class="meta-line"><span class="meta-dot"></span>Yellowwood Forest, Morgan Bay, Eastern Cape</div>
+      <div class="meta-line"><span class="meta-dot"></span>1 hour from East London &middot; For women of all ages</div>
+    </div>
+    <div class="cover-ctas">
+      <a href="https://quicket.co.za" target="_blank" class="btn-gold">&#127903; Claim My Spot &mdash; R2 150</a>
+      <a href="#programme" class="btn-ghost">See What&rsquo;s Planned &darr;</a>
+    </div>
+  </div>
+
+  <div class="cover-right">
+    <div class="c-blob cb1"></div>
+    <div class="c-blob cb2"></div>
+    <span class="petal" style="left:14%;animation-duration:18s;animation-delay:0s">&#127807;</span>
+    <span class="petal" style="left:52%;animation-duration:23s;animation-delay:4s">&#127811;</span>
+    <span class="petal" style="left:74%;animation-duration:16s;animation-delay:8s">&#10047;</span>
+    <span class="petal" style="left:32%;animation-duration:26s;animation-delay:13s">&#10022;</span>
+    <div class="cover-float">
+      <div class="price-ring">
+        <div class="ring-outer"></div>
+        <div class="ring-inner"></div>
+        <div class="price-center">
+          <div class="price-lbl">Early Bird</div>
+          <div class="price-amt"><small style="font-size:1.1rem">R</small>2150</div>
+          <div class="price-lbl">per person</div>
+        </div>
+      </div>
+      <p class="cover-sub-quote">&ldquo;As the world invites us into an unfamiliar dance&hellip; this is where we gather, breathe, and step into the Dance of Now.&rdquo;</p>
+    </div>
+  </div>
+</div>
+
+<!-- PULL QUOTE -->
+<div class="pull-quote">
+  <span class="pq-mark">&ldquo;</span>
+  <p class="pq-text">Imagine waking in a <em>forest cathedral</em>, moving your body on a wild beach at sunrise, sharing stories around a fire with women who truly <em>see</em> you.</p>
+</div>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal-l">
+        <p class="chap"><span class="chap-n">01 &middot;</span> Why WomenForest?</p>
+        <h2 class="section-title">A gathering that is<br><em>Part Retreat.</em><br><span class="script">Part Magic.</span></h2>
+        <p class="section-body" style="margin-bottom:30px">This isn&rsquo;t just a retreat &mdash; it&rsquo;s a regenerative re-set for your whole self. Indigenous forests, wild rivers, dramatic cliffs and breathtaking beaches &mdash; all yours to explore and be healed by.</p>
+        <div class="about-cards">
+          <div class="about-card">
+            <span class="ac-icon">&#127794;</span>
+            <h3>Immerse in Nature</h3>
+            <p>Ancient yellowwood forests, singing birds, wild rivers, a secret beach and the silence that heals you bone-deep.</p>
+          </div>
+          <div class="about-card">
+            <span class="ac-icon">&#128131;</span>
+            <h3>Soul Dance</h3>
+            <p>Dance on the beach at sunrise. Move freely in the forest. A practice of presence, joy and liberation for every body.</p>
+          </div>
+          <div class="about-card">
+            <span class="ac-icon">&#129309;</span>
+            <h3>Sister Circle</h3>
+            <p>Connect with women across all ages. Fireside ceremonies, shared meals, laughter and honest conversation.</p>
+          </div>
+          <div class="about-card">
+            <span class="ac-icon">&#10024;</span>
+            <h3>Co-Created</h3>
+            <p>Not passive &mdash; you shape it. Workshops, creativity, land art and a closing ceremony planted in the earth.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal-r">
+        <div class="about-feature">
+          <blockquote>&ldquo;As the world invites us into an <em>unfamiliar dance</em>&hellip; certainties shifting, our bodies changing&hellip; this is where we gather, breathe, and step into the <em>Dance of Now</em>.&rdquo;</blockquote>
+          <div class="feat-list">
+            <div class="feat-item"><span class="feat-dot"></span>Meditation &middot; Soul Dance in the Forest</div>
+            <div class="feat-item"><span class="feat-dot"></span>Forest &amp; Beach Walks &middot; Campfires</div>
+            <div class="feat-item"><span class="feat-dot"></span>Creativity &middot; Self Care &middot; Connection</div>
+            <div class="feat-item"><span class="feat-dot"></span>Live Music &middot; Fire Ceremony &middot; Night Walk</div>
+            <div class="feat-item"><span class="feat-dot"></span>Land Art &middot; Mandala &middot; Tree Planting</div>
+            <div class="feat-item"><span class="feat-dot"></span>Suppers &amp; Breakfasts Included</div>
+          </div>
+          <div style="margin-top:26px">
+            <a href="https://quicket.co.za" target="_blank" class="btn-gold" style="width:100%;justify-content:center;border-radius:14px">&#127903; Yes, I Want This!</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section class="programme" id="programme">
+  <div class="container">
+    <p class="chap"><span class="chap-n">02 &middot;</span> Full Schedule</p>
+    <h2 class="section-title">Three Days of <em>Deep Nourishment</em></h2>
+    <div class="day-tabs">
+      <button class="day-tab active" onclick="showDay('fri',this)">&#127769; Friday 1 May &mdash; Connect</button>
+      <button class="day-tab" onclick="showDay('sat',this)">&#9728;&#65039; Saturday 2 May &mdash; Give &amp; Receive</button>
+      <button class="day-tab" onclick="showDay('sun',this)">&#127749; Sunday 3 May &mdash; Reflect</button>
+    </div>
+    <div class="day-panel active" id="day-fri">
+      <div class="day-header"><div class="day-theme">Connect</div><div class="day-desc">Arrive into the forest, settle in, open your heart and meet your sisters.</div></div>
+      <div class="sched"><div class="sched-time">12h00</div><div class="sched-line"></div><div class="sched-name">Arrival &amp; Check-in</div></div>
+      <div class="sched"><div class="sched-time">14h00</div><div class="sched-line"></div><div class="sched-name">Welcome &amp; Intention</div></div>
+      <div class="sched"><div class="sched-time">15h00</div><div class="sched-line"></div><div class="sched-name">Forest Walk &amp; Meditation</div></div>
+      <div class="sched"><div class="sched-time">16h00</div><div class="sched-line"></div><div class="sched-name">Creative Expression</div></div>
+      <div class="sched"><div class="sched-time">17h00</div><div class="sched-line"></div><div class="sched-name">Free Time + River Swim</div></div>
+      <div class="sched"><div class="sched-time">18h30</div><div class="sched-line"></div><div class="sched-name">Supper</div></div>
+      <div class="sched"><div class="sched-time">19h00</div><div class="sched-line"></div><div class="sched-name">Live Music: The Acousfix &#127926;</div></div>
+      <div class="sched"><div class="sched-time">20h30</div><div class="sched-line"></div><div class="sched-name">DJ, Dancing &amp; Karaoke &#128378;</div></div>
+    </div>
+    <div class="day-panel" id="day-sat">
+      <div class="day-header"><div class="day-theme">Give &amp; Receive</div><div class="day-desc">The heart of the retreat &mdash; learning, creating, sharing and celebrating.</div></div>
+      <div class="sched"><div class="sched-time">07h00</div><div class="sched-line"></div><div class="sched-name">Beach: Breath, Stretch, Walk &#127754;</div></div>
+      <div class="sched"><div class="sched-time">09h00</div><div class="sched-line"></div><div class="sched-name">Breakfast + Morning Circle</div></div>
+      <div class="sched"><div class="sched-time">10h00</div><div class="sched-line"></div><div class="sched-name">Forest Learning &amp; Restoration</div></div>
+      <div class="sched"><div class="sched-time">12h00</div><div class="sched-line"></div><div class="sched-name">Creative Activity + Market Lunch</div></div>
+      <div class="sched"><div class="sched-time">13h30</div><div class="sched-line"></div><div class="sched-name">Siesta / Free Time &#128164;</div></div>
+      <div class="sched"><div class="sched-time">14h30</div><div class="sched-line"></div><div class="sched-name">Self &amp; Sister Care</div></div>
+      <div class="sched"><div class="sched-time">15h30</div><div class="sched-line"></div><div class="sched-name">Talk / Workshop + Sharing</div></div>
+      <div class="sched"><div class="sched-time">17h00</div><div class="sched-line"></div><div class="sched-name">Lake / Beach / Cliffs &#127958;</div></div>
+      <div class="sched"><div class="sched-time">18h30</div><div class="sched-line"></div><div class="sched-name">Light Supper</div></div>
+      <div class="sched"><div class="sched-time">19h00</div><div class="sched-line"></div><div class="sched-name">Fire Circle &amp; Ceremony &#128293;</div></div>
+      <div class="sched"><div class="sched-time">20h30</div><div class="sched-line"></div><div class="sched-name">Optional Night Walk &#127769;</div></div>
+    </div>
+    <div class="day-panel" id="day-sun">
+      <div class="day-header"><div class="day-theme">Reflect</div><div class="day-desc">Rise with the sun, plant a tree, close the circle and carry the forest home.</div></div>
+      <div class="sched"><div class="sched-time">07h00</div><div class="sched-line"></div><div class="sched-name">Breakfast + Dedication (Sunrise option &#127749;)</div></div>
+      <div class="sched"><div class="sched-time">08h00</div><div class="sched-line"></div><div class="sched-name">Beach Soul Dance &#128131;</div></div>
+      <div class="sched"><div class="sched-time">09h30</div><div class="sched-line"></div><div class="sched-name">Collective Creation &mdash; Land Art / Mandala</div></div>
+      <div class="sched"><div class="sched-time">11h30</div><div class="sched-line"></div><div class="sched-name">Closing Circle + Tree Planting &#127807;</div></div>
+      <div class="sched"><div class="sched-time">12h30</div><div class="sched-line"></div><div class="sched-name">Checkout &amp; Departure (Optional final lunch)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEEL -->
+<section class="feel">
+  <div class="reveal" style="max-width:800px;margin:0 auto">
+    <h2 class="feel-title">You&rsquo;ll leave feeling&hellip;</h2>
+    <div class="feel-chips">
+      <div class="feel-chip">&#127754; Deeply rested</div>
+      <div class="feel-chip">&#10024; Creatively alive</div>
+      <div class="feel-chip">&#129309; Seen by your sisters</div>
+      <div class="feel-chip">&#127807; Rooted in nature</div>
+      <div class="feel-chip">&#128131; Free in your body</div>
+      <div class="feel-chip">&#128293; Lit from within</div>
+      <div class="feel-chip">&#129512; Centred &amp; clear</div>
+      <div class="feel-chip">&#127807; Ready for what&rsquo;s next</div>
+    </div>
+    <p style="font-family:'Cormorant Infant',serif;font-size:1.18rem;font-style:italic;color:rgba(255,255,255,0.58);line-height:1.78;margin:22px 0">&ldquo;Facilitated &amp; Co-Created &middot; A regenerative re-set for women of all ages and backgrounds&rdquo;</p>
+    <a href="https://quicket.co.za" target="_blank" class="btn-gold" style="font-size:.97rem;padding:17px 44px">&#127903; I&rsquo;m In &mdash; Book My Place</a>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="included">
+  <div class="included-inner">
+    <div class="reveal-l">
+      <p class="chap"><span class="chap-n">03 &middot;</span> Deep Questions</p>
+      <h2 class="section-title">We&rsquo;ll be <em>exploring&hellip;</em></h2>
+      <p class="section-body" style="margin-bottom:28px">This retreat is built around questions that matter. Not lectures &mdash; lived inquiry. Together we explore what it means to be a woman stepping fully into the present moment.</p>
+      <div class="eq-list">
+        <div class="eq">How do we step into this dance?</div>
+        <div class="eq">What ways of Being support our hearts &amp; bodies, now?</div>
+        <div class="eq">How to dance this alone, and together?</div>
+        <div class="eq">What essence of our Self is needed now, ready to come forth?</div>
+      </div>
+    </div>
+    <div class="reveal-r">
+      <div class="included-box">
+        <h3>What&rsquo;s included</h3>
+        <div class="inc-list">
+          <div class="inc-item"><span class="inc-icon">&#127869;</span><p><strong>Suppers &amp; Breakfasts</strong> &mdash; all meals lovingly provided</p></div>
+          <div class="inc-item"><span class="inc-icon">&#128131;</span><p><strong>All Activities</strong> &mdash; every workshop, dance, ceremony &amp; session</p></div>
+          <div class="inc-item"><span class="inc-icon">&#127957;</span><p><strong>Camping</strong> &mdash; bring your own gear, sleep under the stars</p></div>
+          <div class="inc-item"><span class="inc-icon">&#127926;</span><p><strong>Live Music</strong> with The Acousfix on Friday night</p></div>
+          <div class="inc-item"><span class="inc-icon">&#128293;</span><p><strong>Fire Circle &amp; Ceremony</strong> &mdash; heart of Saturday night</p></div>
+          <div class="inc-item"><span class="inc-icon">&#127807;</span><p><strong>Tree Planting</strong> &mdash; leave a living mark on this land</p></div>
+        </div>
+        <div style="margin-top:22px;position:relative;z-index:1">
+          <a href="https://quicket.co.za" target="_blank" class="btn-gold" style="width:100%;justify-content:center;border-radius:12px">&#127903; Book Your Spot Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section class="venue" id="venue">
+  <div class="venue-inner">
+    <div class="reveal-l">
+      <p class="chap"><span class="chap-n">04 &middot;</span> The Setting</p>
+      <h2 class="section-title">Yellowwood Forest,<br><em>Morgan Bay</em></h2>
+      <p class="section-body" style="margin-bottom:28px">A tranquil eco retreat in the Eastern Cape &mdash; ancient yellowwood trees, singing birds, wild rivers, a secret beach and the kind of silence that heals you bone-deep.</p>
+      <div class="vd-list">
+        <div class="vd">
+          <div class="vd-icon">&#127794;</div>
+          <div class="vd-body"><strong>The Venue</strong><span>Yellowwood Forest &mdash; forests, streams, birds and pure tranquility</span></div>
+        </div>
+        <div class="vd">
+          <div class="vd-icon">&#128205;</div>
+          <div class="vd-body"><strong>Getting There</strong><span>Near Morgan Bay (Gxarha), Eastern Cape &mdash; approx. 1 hour from East London</span></div>
+        </div>
+        <div class="vd">
+          <div class="vd-icon">&#127958;</div>
+          <div class="vd-body"><strong>What&rsquo;s Nearby</strong><span>Wild beach, indigenous forest, river swimming, lake, cliffs &mdash; all walkable</span></div>
+        </div>
+        <div class="vd">
+          <div class="vd-icon">&#127859;</div>
+          <div class="vd-body"><strong>Facilities</strong><span>Kitchen, ablutions, fire pits &mdash; basic self-catering. Suppers &amp; breakfasts provided</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-r">
+      <div class="accom-box">
+        <h3>Accommodation</h3>
+        <p class="accom-sub">All options bookable via Quicket</p>
+        <div class="accom-opt"><span class="accom-opt-name">&#127957; Camping (own gear)</span><span class="accom-opt-price">Included</span></div>
+        <div class="accom-opt"><span class="accom-opt-name">&#9978; Safari Dome Tent</span><span class="accom-opt-price">+R500&ndash;R900pp</span></div>
+        <div class="accom-opt"><span class="accom-opt-name">&#127968; Cabin / Indoor Room</span><span class="accom-opt-price">+R500&ndash;R900pp</span></div>
+        <div class="accom-note">Upgrade options on the Quicket booking page. Accommodation sells out fast &mdash; book early! &#127807;</div>
+        <a href="https://quicket.co.za" target="_blank" class="btn-gold" style="margin-top:16px;display:flex;justify-content:center;border-radius:10px;font-size:.82rem;position:relative;z-index:1">See Accommodation Options &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <p class="chap"><span class="chap-n">05 &middot;</span> Investment in You</p>
+    <h2 class="section-title">Choose Your <em>Moment to Book</em></h2>
+    <p style="font-size:1rem;color:var(--ink-2);font-style:italic;margin-top:-8px">The sooner you book, the more you save &#127807;</p>
+    <div class="pc-wrap">
+      <div class="pc crossed reveal">
+        <div class="pc-label">Earlybird (Expired)</div>
+        <div class="pc-price"><span>R</span>2150</div>
+        <div class="pc-dl">Until 8 March 2026</div>
+        <ul class="pc-list"><li>All activities</li><li>Suppers &amp; breakfasts</li><li>Camping included</li></ul>
+        <div class="crossed-overlay"><div class="crossed-stamp">Expired</div></div>
+      </div>
+      <div class="pc featured reveal">
+        <div class="pc-badge">&#128293; Extended! Book Now</div>
+        <div class="pc-label">Early Bird Extended</div>
+        <div class="pc-price"><span>R</span>2150</div>
+        <div class="pc-dl">&#8987; Until 15 March 2026 only</div>
+        <ul class="pc-list">
+          <li>All activities included</li>
+          <li>Suppers &amp; breakfasts</li>
+          <li>Camping (own gear)</li>
+          <li>Best available price</li>
+          <li>Limited spots left!</li>
+        </ul>
+        <div style="margin-top:18px;position:relative;z-index:1">
+          <a href="https://quicket.co.za" target="_blank" class="btn-gold" style="width:100%;justify-content:center;border-radius:10px;font-size:.82rem">Grab This Price &rarr;</a>
+        </div>
+      </div>
+      <div class="pc reveal">
+        <div class="pc-label">Standard</div>
+        <div class="pc-price"><span>R</span>2400</div>
+        <div class="pc-dl">Until 31 March 2026</div>
+        <ul class="pc-list"><li>All activities included</li><li>Suppers &amp; breakfasts</li><li>Camping (own gear)</li><li>Full retreat experience</li></ul>
+      </div>
+      <div class="pc reveal">
+        <div class="pc-label">Late Booking</div>
+        <div class="pc-price"><span>R</span>2650</div>
+        <div class="pc-dl">Booked in April</div>
+        <ul class="pc-list"><li>All activities included</li><li>Suppers &amp; breakfasts</li><li>Camping (own gear)</li><li>Subject to availability</li></ul>
+      </div>
+    </div>
+    <p style="font-size:.84rem;color:var(--ink-2);font-style:italic;margin-bottom:30px">+ Accommodation upgrades (glamping / cabins) from R500&ndash;R900 pp &mdash; see Quicket for options</p>
+    <a href="https://quicket.co.za" target="_blank" class="btn-navy" style="font-size:.97rem;padding:17px 48px">&#127903; Book on Quicket &mdash; Secure Your Spot</a>
+    <p style="margin-top:12px;font-size:.82rem;color:var(--ink-3);font-style:italic">Limited spaces &middot; For women of all ages &amp; backgrounds</p>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+  <div class="nl-inner">
+    <div class="nl-box reveal">
+      <p class="chap">Stay in Our Circle</p>
+      <h2 class="section-title" style="color:rgba(255,255,255,.92);font-size:1.9rem">Join Our Mailing List</h2>
+      <p class="nl-body">Get updates, early bird news for future events, behind-the-scenes forest life and inspiration from our community. We only ever send beautiful things.</p>
+      <div class="nl-form">
+        <input type="email" class="nl-input" placeholder="your@email.com" id="nl-email">
+        <button class="nl-btn" onclick="subscribe()">Subscribe &#127807;</button>
+      </div>
+      <p class="nl-privacy">Your details are safe &middot; Unsubscribe anytime</p>
+      <p id="nl-success">&#10022; Welcome to the circle! Check your inbox. &#129419;</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <p class="chap"><span class="chap-n">06 &middot;</span> Get In Touch</p>
+    <h2 class="section-title">Ready to <em>Join Us?</em></h2>
+    <div class="cc-grid">
+      <a href="https://quicket.co.za" target="_blank" class="cc reveal">
+        <span class="cc-icon">&#127903;</span>
+        <h3>Book on Quicket</h3>
+        <p>Secure your spot, choose accommodation and pay safely online. Full details on the booking page.</p>
+        <span class="cc-link">Book Now &rarr;</span>
+      </a>
+      <a href="tel:0832005336" class="cc reveal">
+        <span class="cc-icon">&#128222;</span>
+        <h3>Call or WhatsApp</h3>
+        <p>Have questions? We love to chat. Call or WhatsApp &mdash; we&rsquo;re here to help you feel ready and excited.</p>
+        <span class="cc-link">083 200 5336 &middot; 083 235 1233</span>
+      </a>
+      <a href="#newsletter" class="cc reveal">
+        <span class="cc-icon">&#128140;</span>
+        <h3>Mailing List</h3>
+        <p>Sign up for updates, early bird news for future events, and love letters from the forest.</p>
+        <span class="cc-link">Join the List &rarr;</span>
+      </a>
+    </div>
+    <div class="final-cta reveal">
+      <h2>Your forest is calling.</h2>
+      <p>Three days. A circle of women. One breathtaking corner of the Eastern Cape.<br>Come home to yourself.</p>
+      <a href="https://quicket.co.za" target="_blank" class="btn-gold" style="font-size:.97rem;padding:17px 46px">&#127807; Yes &mdash; Book My Place at WomenForest</a>
+      <p style="margin-top:14px;font-size:.76rem;color:rgba(255,255,255,.24);font-style:italic">Full details &amp; booking on Quicket &middot; 083 200 5336 &middot; 083 235 1233</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><strong>WomenForest Retreat Camp</strong> &middot; 1&ndash;3 May 2026</p>
+  <p>Yellowwood Forest, Morgan Bay, Eastern Cape &middot; 1 hour from East London</p>
+  <p style="margin-top:8px">Facilitated by <strong>Soul Dance</strong> &middot; Full details &amp; booking on <strong>Quicket</strong></p>
+  <p style="margin-top:10px;font-size:.72rem;opacity:.38">083 200 5336 &middot; 083 235 1233 &middot; For women of all ages and backgrounds</p>
+</footer>
+
+<script>
+// Custom cursor
+const cur = document.getElementById('cursor'), ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cur.style.left = mx + 'px'; cur.style.top = my + 'px'; });
+(function anim() { rx += (mx - rx) * .11; ry += (my - ry) * .11; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(anim); })();
+
+// Day tabs
+function showDay(d, btn) {
+  document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.day-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('day-' + d).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Newsletter
+function subscribe() {
+  const email = document.getElementById('nl-email').value.trim();
+  if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+  window.open('https://mailchimp.com', '_blank');
+  document.getElementById('nl-success').style.display = 'block';
+  document.getElementById('nl-email').value = '';
+}
+document.getElementById('nl-email').addEventListener('keypress', e => { if (e.key === 'Enter') subscribe(); });
+
+// Countdown
+function tick() {
+  const diff = new Date('2026-03-15T23:59:59') - new Date();
+  if (diff <= 0) { document.getElementById('countdown').textContent = 'Early Bird has ended'; return; }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('countdown').innerHTML = `<strong style="color:#f0c84e">${d}d ${h}h ${m}m ${s}s left</strong>`;
+}
+setInterval(tick, 1000); tick();
+
+// Scroll reveal
+const els = document.querySelectorAll('.reveal, .reveal-l, .reveal-r');
+const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('up'); }); }, { threshold: .1 });
+els.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
